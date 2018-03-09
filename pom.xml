@@ -8,8 +8,8 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>project-service</name>
-	<description>Demo project for Spring Boot</description>
+	<projectName>project-service</projectName>
+	<taskDescription>Project Service for Yellowmine</taskDescription>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -25,9 +25,20 @@
 	</properties>
 
 	<dependencies>
+
+
+		<!--Притащил спринг бут инишиалайзер-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+
+
+		<!--Для аннотации repo rest resource-->
+		<dependency>
+			<groupId>org.springframework.data</groupId>
+			<artifactId>spring-data-rest-webmvc</artifactId>
+			<version>3.0.5.RELEASE</version>
 		</dependency>
 
 		<dependency>
@@ -36,6 +47,17 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
+
+	<repositories>
+		<repository>
+			<id>spring-libs-release</id>
+			<name>Spring Releases</name>
+			<url>https://repo.spring.io/libs-release</url>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
 
 	<build>
 		<plugins>
